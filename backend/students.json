@@ -1,0 +1,340 @@
+{
+  "students": [
+    {
+      "id": "s1",
+      "name": "Chrysoula Chala",
+      "university": "University A",
+      "availability": {
+        "Sunday":"None",
+        "Monday":"None", 
+        "Tuesday":"06:00-22:00",
+        "Wednesday":"06:00-14:00", 
+        "Thursday":"14:00-22:00", 
+        "Friday":"None", 
+        "Saturday":"06:00-22:00"
+      }
+    },
+    {
+      "id": "s2",
+      "name": "Fotis Kouzinos",
+      "university": "University B",
+      "availability": {
+        "Sunday":"06:00-22:00",
+        "Monday":"06:00-14:00", 
+        "Tuesday":"None",
+        "Wednesday":"None", 
+        "Thursday":"14:00-22:00", 
+        "Friday":"None", 
+        "Saturday":"06:00-22:00"
+      }
+    },
+    {
+      "id": "s4",
+      "name": "Artemis Papamichail",
+      "university": "University A",
+      "availability": {
+       "Sunday":"14:00-22:00",
+        "Monday":"14:00-22:00", 
+        "Tuesday":"06:00-22:00",
+        "Wednesday":"06:00-14:00", 
+        "Thursday":"None", 
+        "Friday":"06:00-22:00", 
+        "Saturday":"None"
+      }
+    },
+    {
+      "id": "s5",
+      "name": "Dafni Panopoulou",
+      "university": "University A",
+      "availability": {
+        "Sunday":"None",
+        "Monday":"None", 
+        "Tuesday":"06:00-22:00",
+        "Wednesday":"06:00-14:00", 
+        "Thursday":"14:00-22:00", 
+        "Friday":"06:00-22:00", 
+        "Saturday":"None"
+      }
+    },
+    {
+      "id": "s6",
+      "name": "Eva Gkoraki",
+      "university": "University A",
+      "availability": {
+        "Sunday":"None",
+        "Monday":"None", 
+        "Tuesday":"None",
+        "Wednesday":"06:00-14:00", 
+        "Thursday":"14:00-22:00", 
+        "Friday":"06:00-22:00", 
+        "Saturday":"06:00-22:00"
+      }
+    },
+    {
+      "id": "s7",
+      "name": "Mary Fousekis",
+      "university": "University A",
+      "availability": {
+        "Sunday":"06:00-22:00",
+        "Monday":"06:00-22:00", 
+        "Tuesday":"06:00-22:00",
+        "Wednesday":"06:00-22:00", 
+        "Thursday":"06:00-22:00", 
+        "Friday":"06:00-22:00", 
+        "Saturday":"06:00-22:00"
+      }
+    },
+    {
+    "id": "s8",
+      "name": "Nikolas Vardakis",
+      "university": "University C",
+      "availability": {
+        "Sunday": "10:00-18:00",
+        "Monday": "08:00-16:00",
+        "Tuesday": "None",
+        "Wednesday": "14:00-22:00",
+        "Thursday": "None",
+        "Friday": "08:00-14:00",
+        "Saturday": "None"
+      }
+    },
+    {
+      "id": "s9",
+      "name": "Alexandra Mourtzoukou",
+      "university": "University A",
+      "availability": {
+        "Sunday": "None",
+        "Monday": "06:00-14:00",
+        "Tuesday": "06:00-22:00",
+        "Wednesday": "None",
+        "Thursday": "14:00-22:00",
+        "Friday": "None",
+        "Saturday": "10:00-18:00"
+      }
+    },
+    {
+      "id": "s10",
+      "name": "George Marinakis",
+      "university": "University B",
+      "availability": {
+        "Sunday": "08:00-22:00",
+        "Monday": "None",
+        "Tuesday": "None",
+        "Wednesday": "08:00-16:00",
+        "Thursday": "08:00-14:00",
+        "Friday": "None",
+        "Saturday": "08:00-12:00"
+      }
+    },
+    {
+      "id": "s11",
+      "name": "Sophia Katseli",
+      "university": "University C",
+      "availability": {
+        "Sunday": "None",
+        "Monday": "10:00-18:00",
+        "Tuesday": "08:00-14:00",
+        "Wednesday": "None",
+        "Thursday": "14:00-22:00",
+        "Friday": "None",
+        "Saturday": "None"
+      }
+    },
+    {
+      "id": "s12",
+      "name": "Theodoros Papadopoulos",
+      "university": "University A",
+      "availability": {
+        "Sunday": "None",
+        "Monday": "None",
+        "Tuesday": "06:00-14:00",
+        "Wednesday": "None",
+        "Thursday": "06:00-22:00",
+        "Friday": "08:00-16:00",
+        "Saturday": "None"
+      }
+    },
+    {
+      "id": "s13",
+      "name": "Eleni Karpathaki",
+      "university": "University B",
+      "availability": {
+        "Sunday": "06:00-22:00",
+        "Monday": "None",
+        "Tuesday": "08:00-16:00",
+        "Wednesday": "None",
+        "Thursday": "None",
+        "Friday": "14:00-22:00",
+        "Saturday": "06:00-12:00"
+      }
+    },
+    {
+      "id": "s14",
+      "name": "Panagiotis Kotsopoulos",
+      "university": "University A",
+      "availability": {
+        "Sunday": "10:00-14:00",
+        "Monday": "06:00-10:00",
+        "Tuesday": "None",
+        "Wednesday": "14:00-18:00",
+        "Thursday": "06:00-10:00",
+        "Friday": "None",
+        "Saturday": "10:00-22:00"
+      }
+    },
+    {
+      "id": "s15",
+      "name": "Eleni Mavridou",
+      "university": "University B",
+      "availability": {
+        "Sunday": "None",
+        "Monday": "10:00-14:00",
+        "Tuesday": "06:00-22:00",
+        "Wednesday": "None",
+        "Thursday": "06:00-14:00",
+        "Friday": "10:00-18:00",
+        "Saturday": "None"
+      }
+    },
+    {
+      "id": "s16",
+      "name": "Alexandros Petrou",
+      "university": "University C",
+      "availability": {
+        "Sunday": "08:00-16:00",
+        "Monday": "None",
+        "Tuesday": "None",
+        "Wednesday": "10:00-14:00",
+        "Thursday": "14:00-22:00",
+        "Friday": "06:00-10:00",
+        "Saturday": "06:00-18:00"
+      }
+    },
+    {
+      "id": "s17",
+      "name": "Maria Papadaki",
+      "university": "University A",
+      "availability": {
+        "Sunday": "06:00-10:00",
+        "Monday": "06:00-14:00",
+        "Tuesday": "06:00-22:00",
+        "Wednesday": "None",
+        "Thursday": "None",
+        "Friday": "06:00-10:00",
+        "Saturday": "None"
+      }
+    },
+    {
+      "id": "s18",
+      "name": "Dimitrios Skouras",
+      "university": "University B",
+      "availability": {
+        "Sunday": "None",
+        "Monday": "None",
+        "Tuesday": "10:00-14:00",
+        "Wednesday": "06:00-10:00",
+        "Thursday": "06:00-22:00",
+        "Friday": "10:00-18:00",
+        "Saturday": "08:00-14:00"
+      }
+    },
+    {
+      "id": "s19",
+      "name": "Sophia Markou",
+      "university": "University C",
+      "availability": {
+        "Sunday": "06:00-22:00",
+        "Monday": "None",
+        "Tuesday": "06:00-10:00",
+        "Wednesday": "10:00-14:00",
+        "Thursday": "06:00-10:00",
+        "Friday": "None",
+        "Saturday": "06:00-22:00"
+      }
+    },
+    {
+      "id": "s20",
+      "name": "Kostas Georgiou",
+      "university": "University A",
+      "availability": {
+        "Sunday": "None",
+        "Monday": "06:00-10:00",
+        "Tuesday": "06:00-14:00",
+        "Wednesday": "14:00-22:00",
+        "Thursday": "None",
+        "Friday": "06:00-10:00",
+        "Saturday": "10:00-22:00"
+      }
+    },
+    {
+      "id": "s21",
+      "name": "Christina Vlachou",
+      "university": "University B",
+      "availability": {
+        "Sunday": "10:00-18:00",
+        "Monday": "06:00-14:00",
+        "Tuesday": "None",
+        "Wednesday": "None",
+        "Thursday": "14:00-22:00",
+        "Friday": "06:00-10:00",
+        "Saturday": "08:00-14:00"
+      }
+    },
+    {
+      "id": "s22",
+      "name": "Giannis Kontis",
+      "university": "University C",
+      "availability": {
+        "Sunday": "06:00-14:00",
+        "Monday": "10:00-18:00",
+        "Tuesday": "06:00-22:00",
+        "Wednesday": "06:00-10:00",
+        "Thursday": "None",
+        "Friday": "06:00-14:00",
+        "Saturday": "None"
+      }
+    },
+    {
+      "id": "s23",
+      "name": "Irene Charalampidou",
+      "university": "University A",
+      "availability": {
+        "Sunday": "None",
+        "Monday": "06:00-22:00",
+        "Tuesday": "06:00-10:00",
+        "Wednesday": "10:00-14:00",
+        "Thursday": "None",
+        "Friday": "None",
+        "Saturday": "06:00-14:00"
+      }
+    },
+    {
+      "id": "s24",
+      "name": "Nikos Paraskakis",
+      "university": "University B",
+      "availability": {
+        "Sunday": "10:00-14:00",
+        "Monday": "06:00-14:00",
+        "Tuesday": "None",
+        "Wednesday": "None",
+        "Thursday": "06:00-22:00",
+        "Friday": "08:00-14:00",
+        "Saturday": "06:00-22:00"
+      }
+    },
+    {
+      "id": "s25",
+      "name": "Eleni Nikolaou",
+      "university": "University C",
+      "availability": {
+        "Sunday": "06:00-22:00",
+        "Monday": "10:00-18:00",
+        "Tuesday": "None",
+        "Wednesday": "06:00-10:00",
+        "Thursday": "14:00-22:00",
+        "Friday": "06:00-10:00",
+        "Saturday": "06:00-14:00"
+      }
+    }
+  ]
+}

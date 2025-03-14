@@ -1,0 +1,42 @@
+{
+  "hubs": [
+    {
+      "hub_id": "h1",
+      "hours_need":{
+        "Sunday": "06:00 - 22:00",
+        "Monday": "06:00 - 22:00", 
+        "Tuesday": "06:00 - 22:00", 
+        "Wednesday": "06:00 - 22:00", 
+        "Thursday": "06:00 - 22:00", 
+        "Friday": "06:00 - 22:00", 
+        "Saturday": "06:00 - 22:00"},
+      "students_need": {
+        "Sunday": 4,
+        "Monday": 7, 
+        "Tuesday": 1, 
+        "Wednesday": 6, 
+        "Thursday": 3, 
+        "Friday": 2, 
+        "Saturday": 10}
+    },
+    {
+      "hub_id": "h2",
+      "hours_need":{
+        "Sunday": "06:00 - 22:00",
+        "Monday": "06:00 - 22:00", 
+        "Tuesday": "06:00 - 22:00", 
+        "Wednesday": "06:00 - 22:00", 
+        "Thursday": "06:00 - 22:00", 
+        "Friday": "06:00 - 22:00", 
+        "Saturday": "06:00 - 22:00"},
+      "students_need": {
+        "Sunday": 5,
+        "Monday": 14, 
+        "Tuesday": 13, 
+        "Wednesday": 12, 
+        "Thursday": 3, 
+        "Friday": 2, 
+        "Saturday": 7}
+    }
+  ]
+}

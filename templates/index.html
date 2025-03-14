@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Filtered Schedule Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        // JavaScript for dynamic filtering
+        function filterSchedule() {
+            const hubFilter = document.getElementById('hubFilter').value.toLowerCase();
+            const dayFilter = document.getElementById('dayFilter').value.toLowerCase();
+            const nameFilter = document.getElementById('nameFilter').value.toLowerCase();
+            const startHour = parseInt(document.getElementById('startHour').value || "6", 10);
+            const endHour = parseInt(document.getElementById('endHour').value || "22", 10);
+
+            const rows = document.querySelectorAll('#scheduleTable tbody tr');
+            rows.forEach(row => {
+                const hub = row.getAttribute('data-hub').toLowerCase();
+                const day = row.getAttribute('data-day').toLowerCase();
+                const name = row.getAttribute('data-name').toLowerCase();
+                const hours = row.getAttribute('data-hours').split('-').map(h => parseInt(h, 10));
+
+                // Check if the row matches all filters
+                if (
+                    (hubFilter === '' || hub === hubFilter) &&
+                    (dayFilter === '' || day === dayFilter) &&
+                    (nameFilter === '' || name.includes(nameFilter)) &&
+                    (hours[0] >= startHour && hours[1] <= endHour)
+                ) {
+                    row.style.display = ''; // Show row
+                } else {
+                    row.style.display = 'none'; // Hide row
+                }
+            });
+        }
+
+        // Ensure start hour and end hour constraints
+        function validateHourInputs() {
+            const startHourInput = document.getElementById('startHour');
+            const endHourInput = document.getElementById('endHour');
+
+            // Adjust start hour if out of bounds
+            if (parseInt(startHourInput.value, 10) < 6) {
+                startHourInput.value = 6;
+            }
+            if (parseInt(startHourInput.value, 10) > 21) {
+                startHourInput.value = 21;
+            }
+
+            // Adjust end hour if out of bounds
+            if (parseInt(endHourInput.value, 10) > 22) {
+                endHourInput.value = 22;
+            }
+            if (parseInt(endHourInput.value, 10) < 7) {
+                endHourInput.value = 7;
+            }
+
+            // Trigger filtering after validation
+            filterSchedule();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        <h1>Filtered Schedule Viewer</h1>
+    </header>
+    <main>
+        <h2>Filter Schedule</h2>
+        <div style="margin-bottom: 20px;">
+            <label for="hubFilter">Hub:</label>
+            <select id="hubFilter" onchange="filterSchedule()">
+                <option value="">All</option>
+                {% for hub_id in schedule.keys() %}
+                    <option value="{{ hub_id }}">{{ hub_id }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="dayFilter">Day:</label>
+            <select id="dayFilter" onchange="filterSchedule()">
+                <option value="">All</option>
+                {% set days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %}
+                {% for day in days %}
+                    <option value="{{ day }}">{{ day }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="nameFilter">Student Name:</label>
+            <input type="text" id="nameFilter" oninput="filterSchedule()" placeholder="Enter student name">
+
+            <label for="startHour">Start Hour:</label>
+            <input type="number" id="startHour" min="6" max="21" value="6" onchange="validateHourInputs()">
+
+            <label for="endHour">End Hour:</label>
+            <input type="number" id="endHour" min="7" max="22" value="22" onchange="validateHourInputs()">
+        </div>
+
+        {% if schedule %}
+            <p>Schedule successfully generated!</p>
+            <table id="scheduleTable" border="1" style="margin: 0 auto; border-collapse: collapse; width: 80%;">
+                <thead>
+                    <tr>
+                        <th>Hub ID</th>
+                        <th>Day</th>
+                        <th>Student Name</th>
+                        <th>Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hub_id, days in schedule.items() %}
+                        {% for day, students in days.items() %}
+                            {% for student_id, details in students.items() %}
+                                <tr data-hub="{{ hub_id }}" data-day="{{ day }}" data-name="{{ details.name }}" data-hours="{{ details.hours.split(':')[0] + '-' + details.hours.split(':')[1].split('-')[1] }}">
+                                    <td>{{ hub_id }}</td>
+                                    <td>{{ day }}</td>
+                                    <td>{{ details.name }}</td>
+                                    <td>{{ details.hours }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% elif error %}
+            <p class="error">{{ error }}</p>
+        {% else %}
+            <p>No schedule data available. Please generate the schedule.</p>
+        {% endif %}
+    </main>
+    <footer>
+        &copy; {{ year }} Schedule Viewer. All Rights Reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Student Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-height: 50px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline-block;
+            margin: 0 15px;
+            vertical-align: middle;
+        }
+        main {
+            padding: 20px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        select {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/static/students_logo.png" alt="AB Students Logo">
+        <h1>AB Students</h1>
+    </header>
+    <main>
+        <h2>Welcome, {{ json_data['name'] }}</h2>
+
+        <label>
+            <input type="checkbox" id="availabilityCheckbox">
+            Set My Availability
+        </label>
+
+        <!-- Availability Modal -->
+        <div id="availabilityModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Set Your Availability</h2>
+                <form id="availabilityForm" action="/student/update_availability" method="post">
+                    <table>
+                        <tr>
+                            <th>Day</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
+                        {% for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
+                        <tr>
+                            <td>{{ day }}</td>
+                            <td>
+                                <select name="availability[{{ day }}][from]">
+                                    <option value="None">None</option>
+                                    {% for hour in range(6, 23) %}
+                                    <option value="{{ '{:02d}'.format(hour) }}">{{ '{:02d}'.format(hour) }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td>
+                                <select name="availability[{{ day }}][to]">
+                                    <option value="None">None</option>
+                                    {% for hour in range(6, 23) %}
+                                    <option value="{{ '{:02d}'.format(hour) }}">{{ '{:02d}'.format(hour) }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <button type="submit">Save Availability</button>
+                </form>
+            </div>
+        </div>
+
+        <h2>Current Availability:</h2>
+        <ul>
+            {% for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
+            <li><strong>{{ day }}:</strong> 
+                {% if json_data['availability'][day] %}
+                    {{ json_data['availability'][day] }}
+                {% else %}
+                    None
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <script>
+        var modal = document.getElementById("availabilityModal");
+        var checkbox = document.getElementById("availabilityCheckbox");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        checkbox.onclick = function() {
+            modal.style.display = checkbox.checked ? "block" : "none";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            checkbox.checked = false;
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                checkbox.checked = false;
+            }
+        }
+    </script>
+</body>
+</html>

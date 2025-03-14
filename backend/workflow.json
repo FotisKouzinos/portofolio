@@ -1,0 +1,1322 @@
+{
+    "hubs": {
+        "schedule": {
+            "h1": {
+                "Sunday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "7:00-20:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "10:00-20:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "6:00-19:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "9:00-20:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "13:00-18:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "8:00-22:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "7:00-8:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "13:00-17:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "17:00-21:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "8:00-22:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "6:00-19:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "10:00-20:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "11:00-16:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "15:00-16:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "12:00-21:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "6:00-19:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "16:00-17:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "8:00-21:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "6:00-21:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "9:00-19:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "12:00-21:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "16:00-17:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "14:00-20:00"
+                    }
+                },
+                "Monday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "9:00-11:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "8:00-9:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "13:00-14:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "8:00-21:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "6:00-20:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "16:00-17:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "10:00-11:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "11:00-21:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "8:00-19:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "13:00-14:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "9:00-14:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "8:00-16:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "17:00-21:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "20:00-21:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "20:00-21:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "12:00-14:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "15:00-22:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "7:00-8:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "15:00-16:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "8:00-9:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "6:00-7:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "6:00-19:00"
+                    }
+                },
+                "Tuesday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "15:00-16:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "8:00-18:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "18:00-19:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "6:00-21:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "6:00-19:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "17:00-18:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "10:00-19:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "16:00-22:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "16:00-22:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "19:00-20:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "8:00-16:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "11:00-12:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "10:00-16:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "12:00-13:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "6:00-20:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "21:00-22:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "15:00-18:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "9:00-20:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "20:00-21:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "10:00-18:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "9:00-22:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "8:00-12:00"
+                    }
+                },
+                "Wednesday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "6:00-20:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "6:00-22:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "13:00-14:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "17:00-18:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "11:00-22:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "9:00-22:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "13:00-14:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "10:00-11:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "11:00-22:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "6:00-14:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "8:00-20:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "7:00-10:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "20:00-21:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "13:00-14:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "9:00-16:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "13:00-22:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "19:00-20:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "7:00-21:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "15:00-20:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "14:00-15:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "6:00-22:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "6:00-20:00"
+                    }
+                },
+                "Thursday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "9:00-10:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "7:00-20:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "6:00-20:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "12:00-21:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "8:00-17:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "12:00-15:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "9:00-18:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "7:00-22:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "9:00-22:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "16:00-17:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "7:00-22:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "11:00-19:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "9:00-22:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "19:00-20:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "11:00-12:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "12:00-13:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "6:00-17:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "7:00-9:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "9:00-16:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "12:00-22:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "9:00-19:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "6:00-17:00"
+                    }
+                },
+                "Friday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "9:00-15:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "14:00-19:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "15:00-20:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "10:00-21:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "9:00-10:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "8:00-9:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "6:00-7:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "13:00-20:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "12:00-14:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "13:00-21:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "7:00-16:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "6:00-7:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "7:00-22:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "8:00-9:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "20:00-21:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "16:00-17:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "6:00-21:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "10:00-21:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "7:00-21:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "6:00-22:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "6:00-14:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "15:00-16:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "6:00-7:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "14:00-15:00"
+                    }
+                },
+                "Saturday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "9:00-22:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "15:00-22:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "10:00-18:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "12:00-18:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "15:00-22:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "6:00-21:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "6:00-20:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "8:00-22:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "8:00-19:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "7:00-22:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "8:00-20:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "8:00-21:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "10:00-22:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "12:00-15:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "9:00-16:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "16:00-22:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "13:00-16:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "8:00-17:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "11:00-20:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "9:00-22:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "7:00-16:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "7:00-20:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "6:00-15:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "13:00-20:00"
+                    }
+                }
+            },
+            "h2": {
+                "Sunday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "11:00-21:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "8:00-21:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "12:00-17:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "7:00-9:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "9:00-22:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "10:00-20:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "16:00-19:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "6:00-22:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "8:00-22:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "7:00-8:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "13:00-22:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "19:00-20:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "13:00-14:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "6:00-19:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "7:00-19:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "6:00-20:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "7:00-17:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "6:00-20:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "6:00-17:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "8:00-17:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "6:00-12:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "18:00-20:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "12:00-13:00"
+                    }
+                },
+                "Monday": {
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "19:00-21:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "10:00-22:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "14:00-15:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "8:00-22:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "12:00-19:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "6:00-18:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "9:00-14:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "6:00-22:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "7:00-21:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "6:00-7:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "6:00-16:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "6:00-21:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "6:00-14:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "6:00-19:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "8:00-22:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "6:00-10:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "10:00-22:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "10:00-19:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "12:00-22:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "15:00-21:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "21:00-22:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "9:00-21:00"
+                    }
+                },
+                "Tuesday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "8:00-20:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "6:00-21:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "6:00-9:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "6:00-12:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "8:00-16:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "7:00-18:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "14:00-15:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "8:00-16:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "12:00-22:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "7:00-20:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "11:00-21:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "18:00-19:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "16:00-22:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "11:00-12:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "6:00-22:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "10:00-18:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "6:00-18:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "6:00-21:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "10:00-22:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "20:00-21:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "11:00-19:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "7:00-17:00"
+                    }
+                },
+                "Wednesday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "13:00-19:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "12:00-16:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "16:00-22:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "9:00-19:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "7:00-22:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "7:00-21:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "6:00-21:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "14:00-21:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "6:00-19:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "15:00-16:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "7:00-18:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "9:00-16:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "19:00-20:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "9:00-22:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "6:00-19:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "17:00-22:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "9:00-19:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "11:00-21:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "9:00-20:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "9:00-12:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "9:00-21:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "11:00-21:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "7:00-13:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "10:00-18:00"
+                    }
+                },
+                "Thursday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "8:00-21:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "17:00-22:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "7:00-17:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "8:00-9:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "6:00-12:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "10:00-11:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "15:00-22:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "21:00-22:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "8:00-9:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "7:00-8:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "10:00-20:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "6:00-22:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "6:00-20:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "7:00-19:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "10:00-18:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "14:00-19:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "9:00-19:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "6:00-19:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "8:00-15:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "6:00-19:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "6:00-18:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "9:00-15:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "6:00-21:00"
+                    }
+                },
+                "Friday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "15:00-19:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "21:00-22:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "6:00-21:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "21:00-22:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "14:00-15:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "10:00-20:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "14:00-22:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "6:00-15:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "10:00-11:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "8:00-18:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "6:00-18:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "13:00-14:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "8:00-17:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "6:00-22:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "21:00-22:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "9:00-19:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "8:00-18:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "8:00-19:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "16:00-19:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "7:00-21:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "15:00-16:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "6:00-22:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "11:00-19:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "20:00-21:00"
+                    }
+                },
+                "Saturday": {
+                    "s1": {
+                        "name": "Chrysoula Chala",
+                        "hours": "12:00-15:00"
+                    },
+                    "s2": {
+                        "name": "Fotis Kouzinos",
+                        "hours": "6:00-19:00"
+                    },
+                    "s4": {
+                        "name": "Artemis Papamichail",
+                        "hours": "8:00-22:00"
+                    },
+                    "s5": {
+                        "name": "Dafni Panopoulou",
+                        "hours": "7:00-15:00"
+                    },
+                    "s6": {
+                        "name": "Eva Gkoraki",
+                        "hours": "14:00-19:00"
+                    },
+                    "s7": {
+                        "name": "Mary Fousekis",
+                        "hours": "19:00-20:00"
+                    },
+                    "s8": {
+                        "name": "Nikolas Vardakis",
+                        "hours": "18:00-19:00"
+                    },
+                    "s9": {
+                        "name": "Alexandra Mourtzoukou",
+                        "hours": "6:00-15:00"
+                    },
+                    "s10": {
+                        "name": "George Marinakis",
+                        "hours": "19:00-20:00"
+                    },
+                    "s11": {
+                        "name": "Sophia Katseli",
+                        "hours": "9:00-11:00"
+                    },
+                    "s12": {
+                        "name": "Theodoros Papadopoulos",
+                        "hours": "10:00-21:00"
+                    },
+                    "s13": {
+                        "name": "Eleni Karpathaki",
+                        "hours": "13:00-22:00"
+                    },
+                    "s14": {
+                        "name": "Panagiotis Kotsopoulos",
+                        "hours": "8:00-15:00"
+                    },
+                    "s15": {
+                        "name": "Eleni Mavridou",
+                        "hours": "10:00-12:00"
+                    },
+                    "s16": {
+                        "name": "Alexandros Petrou",
+                        "hours": "14:00-21:00"
+                    },
+                    "s17": {
+                        "name": "Maria Papadaki",
+                        "hours": "7:00-19:00"
+                    },
+                    "s18": {
+                        "name": "Dimitrios Skouras",
+                        "hours": "9:00-12:00"
+                    },
+                    "s19": {
+                        "name": "Sophia Markou",
+                        "hours": "11:00-12:00"
+                    },
+                    "s20": {
+                        "name": "Kostas Georgiou",
+                        "hours": "7:00-19:00"
+                    },
+                    "s21": {
+                        "name": "Christina Vlachou",
+                        "hours": "14:00-15:00"
+                    },
+                    "s22": {
+                        "name": "Giannis Kontis",
+                        "hours": "18:00-19:00"
+                    },
+                    "s23": {
+                        "name": "Irene Charalampidou",
+                        "hours": "9:00-22:00"
+                    },
+                    "s24": {
+                        "name": "Nikos Paraskakis",
+                        "hours": "10:00-22:00"
+                    },
+                    "s25": {
+                        "name": "Eleni Nikolaou",
+                        "hours": "6:00-21:00"
+                    }
+                }
+            }
+        }
+    }
+}

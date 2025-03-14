@@ -29,32 +29,9 @@ Welcome to **My Portfolio Repository** – a curated collection of demo projects
 
 ## 🌟 Demo Branches
 
-- **[Demo-Feature1](https://github.com/yourusername/portofolio/tree/demo-feature1):**  
-  _A deep dive into fundamental concepts and core functionalities._
-  
-- **[Demo-Feature2](https://github.com/yourusername/portofolio/tree/demo-feature2):**  
-  _An exploration of advanced techniques and creative problem-solving strategies._
-
-*Feel free to update the branch names and descriptions as you add new demos or refine existing ones.*
+- **[ApiB](https://github.com/FotisKouzinos/portofolio/tree/ApiB):**  
+  _This is part of a school project in order to obtain my master's degree in wich an API was created that automates the proccess of creating a work schedule_
 
 ---
-
-## 💡 Get Involved
-
-- **Feedback & Suggestions:**  
-  If you have ideas or improvements, please open an issue. Your insights are invaluable!
-  
-- **Contributions:**  
-  Contributions are welcome. Fork this repository, enhance the demos, and submit a pull request to share your improvements.
-
----
-
-## 📚 Additional Resources
-
-- **Documentation:**  
-  Detailed markdown files and code comments in each branch explain the project intricacies.
-  
-- **Tutorials & Guides:**  
-  Visit our [wiki](https://github.com/yourusername/portofolio/wiki) for step-by-step tutorials and further insights into each project.
 
 Thank you for stopping by! Enjoy exploring the projects, and happy coding! 😊

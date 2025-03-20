@@ -17,7 +17,7 @@ try:
                                                             data['name']))
     client = MongoClient(uri)
     db = client['ApiB']  # Ensure database is correctly named
-    hubs_collection = db['hubs']
+    hubs_collection = db['hub']
     students_collection = db['students']
 except Exception as e:
     print(f"Error connecting to MongoDB: {e}")
@@ -49,20 +49,25 @@ def manager():
     except Exception as e:
         return f"Error fetching hubs: {str(e)}"
 
-
 @app.route('/manager/update_hub', methods=['POST'])
 def update_hub():
-    hub_id = request.form.get('edit_hub_id')
-    # Prepare hours_need and students_need
-    hours_need = {}
-    students_need = {}
-    for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
-        from_time = request.form.get(f'edit_hours_{day}_from')
-        to_time = request.form.get(f'edit_hours_{day}_to')
-        hours_need[day] = f"{int(from_time):02d}:00-{int(to_time):02d}:00"
-        students_need[day] = f"{int(request.form.get(f'edit_students_{day}')):01d}"
-    # Update MongoDB entry
     try:
+        hub_id = request.form.get('edit_hub_id')
+        # Prepare dictionaries for storing multiple time slots
+        hours_need = {}
+        students_need = {}
+        for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
+            from_times = request.form.getlist(f'edit_hours_{day}_from[]')
+            to_times = request.form.getlist(f'edit_hours_{day}_to[]')
+            student_counts = request.form.getlist(f'edit_students_{day}[]')
+            # Ensure correct formatting
+            time_slots = []
+            student_slots = []
+            for from_time, to_time, student_count in zip(from_times, to_times, student_counts):
+                time_slots.append(f"{int(from_time):02d}:00-{int(to_time):02d}:00")
+                student_slots.append(int(student_count))  # Convert student count to integer
+            hours_need[day] = time_slots if time_slots else []
+            students_need[day] = student_slots if student_slots else []
         # Fetch the entire hubs list from MongoDB
         hub_document = hubs_collection.find_one({}, {"_id": 0, "hubs": 1})
         if not hub_document or "hubs" not in hub_document:
@@ -163,29 +168,27 @@ def add_entry():
 @app.route('/student/complete_availability', methods=['POST'])
 def complete_availability():
     try:
-        if 'student_id' not in session:  # Check if user is logged in
-            return redirect(url_for('student_home'))  # Redirect to login if not
-        student_id = session['student_id']  # Retrieve student ID from session
-        student = session.get('student_data')  # Retrieve student data from session
-        if not student or "availability" not in student:  # Ensure availability exists in session data
+        if 'student_id' not in session:
+            return redirect(url_for('student_home'))
+        student_id = session['student_id']
+        student = session.get('student_data')
+        if not student or "availability" not in student:
             return jsonify({"error": "Student data not found in session"}), 404
-        # Ensure all days exist in availability; if missing, set to "None"
+        # Ensure all days exist in availability; if missing, set to ["None"]
         for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
-            if day not in student["availability"] or not student["availability"][day].strip():
-                student["availability"][day] = "None"
+            if day not in student["availability"] or not student["availability"][day]:
+                student["availability"][day] = ["None"]
         # Update session data to reflect changes
         session['student_data'] = student
-        session.modified = True  # Ensure session is updated
+        session.modified = True
         # Update database to reflect "None" for empty days
-        for day, time in student["availability"].items():
-            students_collection.update_one(
-                {"students.id": student_id},  # Match student by ID
-                {"$set": {f"students.$.availability.{day}": time}}  # Update each day's availability
-            )
+        students_collection.update_one(
+            {"students.id": student_id},
+            {"$set": {f"students.$.availability": student["availability"]}}
+        )
         return redirect(url_for('student_dashboard'))  # Redirect to dashboard
     except Exception as e:
-        return jsonify({"error": f"Failed to complete availability: {e}"}), 500  # Return error if an issue occurs
-
+        return jsonify({"error": f"Failed to complete availability: {e}"}), 500
 
 # Route for displaying the student dashboard
 @app.route('/student/dashboard')
@@ -202,10 +205,10 @@ def student_dashboard():
     student = next((s for s in students_list if s["id"] == student_id), None)
     if student:
         # Ensure the student has an "availability" field but leave it empty initially
-        student.setdefault("availability", {})
+        student.setdefault("availability", {day: [] for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]})
         # Store updated student data in session
         session['student_data'] = student
-        session.modified = True  # Ensure session is saved
+        session.modified = True
         return render_template('student_dashboard.html', json_data=student)  # Render the dashboard
     return redirect(url_for('student_home'))  # Redirect to login if student not found
 
@@ -221,13 +224,16 @@ def update_availability():
         # Retrieve availability data from form
         updated_availability = {}
         for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
-            from_time = request.form.get(f"availability[{day}][from]", "None")
-            to_time = request.form.get(f"availability[{day}][to]", "None")
-            # If either from_time or to_time is "None", set entire day's availability as "None"
-            if from_time == "None" or to_time == "None":
-                updated_availability[day] = "None"
-            else:
-                updated_availability[day] = f"{from_time}:00-{to_time}:00"
+            from_times = request.form.getlist(f"availability[{day}][from][]")
+            to_times = request.form.getlist(f"availability[{day}][to][]")
+            # Ensure correct formatting
+            availability_slots = []
+            for from_time, to_time in zip(from_times, to_times):
+                if from_time == "None" or to_time == "None":
+                    availability_slots = ["None"]
+                    break  # If any slot is "None", the entire day is marked unavailable
+                availability_slots.append(f"{from_time}:00-{to_time}:00")
+            updated_availability[day] = availability_slots
         # Update student data in session
         student["availability"] = updated_availability
         session['student_data'] = student
@@ -235,7 +241,7 @@ def update_availability():
         # Replace the entire availability field in MongoDB
         students_collection.update_one(
             {"students.id": student_id},
-            {"$set": {f"students.$.availability": updated_availability}}  # Overwrite existing availability
+            {"$set": {f"students.$.availability": updated_availability}}
         )
         return redirect(url_for('student_dashboard'))  # Redirect back to dashboard
     except Exception as e:

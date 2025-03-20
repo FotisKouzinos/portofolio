@@ -87,6 +87,77 @@
         select {
             padding: 5px;
         }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .time-slot {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            padding: 5px;
+            border: 1px solid #007BFF;
+            border-radius: 4px;
+        }
+
+        .add-time-slot-btn, .remove-time-slot-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .add-time-slot-btn:hover, .remove-time-slot-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .lock-day-checkbox {
+            cursor: pointer;
+        }
+        .time-slot {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        .remove-time-slot-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .remove-time-slot-btn:hover {
+            background-color: darkred;
+        }
     </style>
 </head>
 <body>
@@ -96,12 +167,10 @@
     </header>
     <main>
         <h2>Welcome, {{ json_data['name'] }}</h2>
-
         <label>
             <input type="checkbox" id="availabilityCheckbox">
             Set My Availability
         </label>
-
         <!-- Availability Modal -->
         <div id="availabilityModal" class="modal">
             <div class="modal-content">
@@ -109,38 +178,61 @@
                 <h2>Set Your Availability</h2>
                 <form id="availabilityForm" action="/student/update_availability" method="post">
                     <table>
-                        <tr>
-                            <th>Day</th>
-                            <th>From</th>
-                            <th>To</th>
-                        </tr>
-                        {% for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
-                        <tr>
-                            <td>{{ day }}</td>
-                            <td>
-                                <select name="availability[{{ day }}][from]">
-                                    <option value="None">None</option>
-                                    {% for hour in range(6, 23) %}
-                                    <option value="{{ '{:02d}'.format(hour) }}">{{ '{:02d}'.format(hour) }}</option>
-                                    {% endfor %}
-                                </select>
-                            </td>
-                            <td>
-                                <select name="availability[{{ day }}][to]">
-                                    <option value="None">None</option>
-                                    {% for hour in range(6, 23) %}
-                                    <option value="{{ '{:02d}'.format(hour) }}">{{ '{:02d}'.format(hour) }}</option>
-                                    {% endfor %}
-                                </select>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </table>
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Unavailable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
+                            <tr>
+                                <td>{{ day }}</td>
+                                <td>
+                                    <div id="student-time-slots-from-{{ day }}">
+                                        <div class="time-slot">
+                                            <select name="availability[{{ day }}][from][]">
+                                                {% for hour in range(6, 23) %}
+                                                <option value="{{ '{:02d}'.format(hour) }}" {% if hour == 6 %}selected{% endif %}>
+                                                    {{ '{:02d}'.format(hour) }}:00
+                                                </option>
+                                                {% endfor %}
+                                            </select>
+                                            <button type="button" class="remove-time-slot-btn" onclick="removeStudentTimeSlot(this)" style="display: none;">Remove</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="student-time-slots-to-{{ day }}">
+                                        <div class="time-slot">
+                                            <select name="availability[{{ day }}][to][]">
+                                                {% for hour in range(6, 23) %}
+                                                <option value="{{ '{:02d}'.format(hour) }}" {% if hour == 22 %}selected{% endif %}>
+                                                    {{ '{:02d}'.format(hour) }}:00
+                                                </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="lock-day-checkbox" data-day="{{ day }}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <button type="button" class="add-time-slot-btn" onclick="addStudentTimeSlot('{{ day }}')">+ Add Time Slot</button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>                                                                                                   
                     <button type="submit">Save Availability</button>
                 </form>
             </div>
         </div>
-
         <h2>Current Availability:</h2>
         <ul>
             {% for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
@@ -154,26 +246,114 @@
             {% endfor %}
         </ul>
     </main>
-
     <script>
         var modal = document.getElementById("availabilityModal");
         var checkbox = document.getElementById("availabilityCheckbox");
         var closeBtn = document.getElementsByClassName("close")[0];
-
         checkbox.onclick = function() {
             modal.style.display = checkbox.checked ? "block" : "none";
         }
-
         closeBtn.onclick = function() {
             modal.style.display = "none";
             checkbox.checked = false;
         }
-
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
                 checkbox.checked = false;
             }
+        }
+        document.querySelectorAll(".lock-day-checkbox").forEach(checkbox => {
+            checkbox.addEventListener("change", function() {
+                const day = this.dataset.day;
+                const fromContainer = document.getElementById(`student-time-slots-from-${day}`);
+                const toContainer = document.getElementById(`student-time-slots-to-${day}`);
+                const addSlotButton = fromContainer.parentElement.parentElement.nextElementSibling.querySelector(".add-time-slot-btn");
+                if (this.checked) {
+                    // Lock the day: Remove all slots and set to "None"
+                    fromContainer.innerHTML = `<input type="hidden" name="availability[${day}][from][]" value="None">
+                                            <span style="color: red;">Unavailable</span>`;
+                    toContainer.innerHTML = `<input type="hidden" name="availability[${day}][to][]" value="None">
+                                            <span style="color: red;">Unavailable</span>`;
+                    addSlotButton.style.display = "none"; // Hide the "+ Add Time Slot" button
+                } else {
+                    // Unlock the day: Restore default slot
+                    fromContainer.innerHTML = `
+                        <div class="time-slot">
+                            <select name="availability[${day}][from][]">
+                                ${generateHourOptions(6)}
+                            </select>
+                            <button type="button" class="remove-time-slot-btn" onclick="removeStudentTimeSlot(this)">Remove</button>
+                        </div>
+                    `;
+                    toContainer.innerHTML = `
+                        <div class="time-slot">
+                            <select name="availability[${day}][to][]">
+                                ${generateHourOptions(22)}
+                            </select>
+                        </div>
+                    `;
+                    addSlotButton.style.display = "inline-block"; // Show the "+ Add Time Slot" button again
+
+                    // Ensure the remove button visibility is correct
+                    checkRemoveButtonVisibility(day);
+                }
+            });
+        });
+        function addStudentTimeSlot(day) {
+            const fromContainer = document.getElementById(`student-time-slots-from-${day}`);
+            const toContainer = document.getElementById(`student-time-slots-to-${day}`);
+            if (document.querySelector(`.lock-day-checkbox[data-day="${day}"]`).checked) return;
+            const newSlot = document.createElement("div");
+            newSlot.classList.add("time-slot");
+            newSlot.innerHTML = `
+                <select name="availability[${day}][from][]">
+                    ${generateHourOptions(6)}
+                </select>
+                <button type="button" class="remove-time-slot-btn" onclick="removeStudentTimeSlot(this)">Remove</button>
+            `;
+            const newToSlot = document.createElement("div");
+            newToSlot.classList.add("time-slot");
+            newToSlot.innerHTML = `
+                <select name="availability[${day}][to][]">
+                    ${generateHourOptions(22)}
+                </select>
+            `;
+            fromContainer.appendChild(newSlot);
+            toContainer.appendChild(newToSlot);
+            // Ensure remove button is only available if more than one slot exists
+            checkRemoveButtonVisibility(day);
+        }
+        function removeStudentTimeSlot(button) {
+            const slot = button.parentElement;
+            const day = button.closest("tr").querySelector(".lock-day-checkbox").dataset.day;
+            const fromContainer = document.getElementById(`student-time-slots-from-${day}`);
+            const toContainer = document.getElementById(`student-time-slots-to-${day}`);
+            // Find the index of the slot to remove
+            const index = Array.from(fromContainer.children).indexOf(slot);
+            fromContainer.removeChild(slot);
+            toContainer.removeChild(toContainer.children[index]);
+            // Ensure remove button is only available if more than one slot exists
+            checkRemoveButtonVisibility(day);
+        }
+        function checkRemoveButtonVisibility(day) {
+            const fromContainer = document.getElementById(`student-time-slots-from-${day}`);
+            const removeButtons = fromContainer.querySelectorAll(".remove-time-slot-btn");
+            removeButtons.forEach((button, index) => {
+                if (removeButtons.length === 1) {
+                    button.style.display = "none"; // Hide remove button if only one slot remains
+                } else {
+                    button.style.display = "inline-block"; // Show remove button if multiple slots exist
+                }
+            });
+        }
+        function generateHourOptions(defaultValue) {
+            let options = "";
+            for (let hour = 6; hour <= 22; hour++) {
+                const selected = (hour === defaultValue) ? "selected" : "";
+                options += `<option value="${hour}" ${selected}>${hour.toString().padStart(2, '0')}:00</option>`;
+            }
+            return options;
         }
     </script>
 </body>

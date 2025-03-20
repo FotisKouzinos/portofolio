@@ -53,13 +53,6 @@
             border: 1px solid blue;
             border-radius: 4px;
         }
-        .flex-container {
-            display: flex;
-            gap: 20px;
-        }
-        .flex-item {
-            flex: 1;
-        }
         .aligned-container {
             display: flex;
             gap: 20px;
@@ -93,6 +86,54 @@
         button:hover {
             background-color: darkblue;
         }
+        .day-container {
+            background-color: #f0f8ff;
+            border: 1px solid blue;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        h3 {
+            margin: 0;
+            color: blue;
+        }
+        .day-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .time-slot {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        select, input {
+            padding: 5px;
+            border: 1px solid blue;
+            border-radius: 4px;
+        }
+        .add-time-slot-btn, .remove-time-slot-btn {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .add-time-slot-btn:hover, .remove-time-slot-btn:hover {
+            background-color: darkblue;
+        }
     </style>
 </head>
 <body>
@@ -117,40 +158,40 @@
                             <option value="" disabled>No Hubs Available</option>
                         {% endif %}
                     </select>
-                    <div class="flex-container">
-                        <div class="flex-item">
-                            <h3>Add Time and number of people you need</h3>
-                            {% for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
-                                <div class="day-row">
-                                    <div class="day-label">{{ day }}:</div>
-                                    <div class="day-inputs">
-                                        <label>From:
-                                            <select id="edit_hours_from_{{ day }}" name="edit_hours_{{ day }}_from">
-                                                {% for hour in range(6, 23) %}
-                                                <option value="{{ hour }}" {% if hour == 6 %}selected{% endif %}>{{ '%02d' % hour }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </label>
-                                        <label>To:
-                                            <select id="edit_hours_to_{{ day }}" name="edit_hours_{{ day }}_to">
-                                                {% for hour in range(6, 23) %}
-                                                <option value="{{ hour }}" {% if hour == 22 %}selected{% endif %}>{{ '%02d' % hour }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </label>
-                                        <label>Students:
-                                            <input type="number" id="edit_students_{{ day }}" name="edit_students_{{ day }}" value="0" min="0">
-                                        </label>
-                                    </div>
-                                </div>
-                            {% endfor %}
+                    <h3>Add Time and Number of People You Need</h3>
+                    {% for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
+                    <div class="day-container">
+                        <div class="day-header">
+                            <h3>{{ day }}</h3>
+                            <button type="button" class="add-time-slot-btn" onclick="addTimeSlot('{{ day }}')">+ Add Time Slot</button>
+                        </div>
+                        <div class="day-inputs" id="time-slots-{{ day }}">
+                            <div class="time-slot">
+                                <label>From:
+                                    <select name="edit_hours_{{ day }}_from[]">
+                                        {% for hour in range(6, 23) %}
+                                        <option value="{{ hour }}" {% if hour == 6 %}selected{% endif %}>{{ '%02d' % hour }}:00</option>
+                                        {% endfor %}
+                                    </select>
+                                </label>
+                                <label>To:
+                                    <select name="edit_hours_{{ day }}_to[]">
+                                        {% for hour in range(6, 23) %}
+                                        <option value="{{ hour }}" {% if hour == 22 %}selected{% endif %}>{{ '%02d' % hour }}:00</option>
+                                        {% endfor %}
+                                    </select>
+                                </label>
+                                <label>Students Needed:
+                                    <input type="number" name="edit_students_{{ day }}[]" value="0" min="0">
+                                </label>
+                                <button type="button" class="remove-time-slot-btn" onclick="removeTimeSlot(this)">Remove</button>
+                            </div>
                         </div>
                     </div>
-
+                    {% endfor %}
                     <button type="button" id="update-button">Update Schedule</button>
                 </form>
             </section>
-
             <!-- Save and Preview Section -->
             <section class="aligned-item">
                 <h2>Preview</h2>
@@ -198,6 +239,40 @@
             })
             .catch(error => console.error('Error:', error));
         });
+        // Adding multiple time slots
+        function addTimeSlot(day) {
+            const container = document.getElementById(`time-slots-${day}`);
+            const newSlot = document.createElement("div");
+            newSlot.classList.add("time-slot");
+            newSlot.innerHTML = `
+                <label>From:
+                    <select name="edit_hours_${day}_from[]">
+                        ${generateHourOptions(6)}
+                    </select>
+                </label>
+                <label>To:
+                    <select name="edit_hours_${day}_to[]">
+                        ${generateHourOptions(22)}
+                    </select>
+                </label>
+                <label>Students Needed:
+                    <input type="number" name="edit_students_${day}[]" value="0" min="0">
+                </label>
+                <button type="button" class="remove-time-slot-btn" onclick="removeTimeSlot(this)">Remove</button>
+            `;
+            container.appendChild(newSlot);
+        }
+        function removeTimeSlot(button) {
+            button.parentElement.remove();
+        }
+        function generateHourOptions(defaultValue) {
+            let options = "";
+            for (let hour = 6; hour <= 22; hour++) {
+                const selected = (hour === defaultValue) ? "selected" : "";
+                options += `<option value="${hour}" ${selected}>${hour.toString().padStart(2, '0')}:00</option>`;
+            }
+            return options;
+        }
     </script>
 </body>
 </html>
